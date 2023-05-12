@@ -1,10 +1,9 @@
 import React,{useState} from 'react';
-import { View, Text, Image, StyleSheet, useWindowDimensions, Alert } from 'react-native';
+import { View, Text, Image, StyleSheet, useWindowDimensions, Alert} from 'react-native';
 import Logo from '../../../assets/Images/logo_parking2.png';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { useNavigation } from '@react-navigation/native';
-import axios from 'axios';
 
 const SignInScreen = () => {
     const [username, setUsername]= useState('');
@@ -16,26 +15,39 @@ const SignInScreen = () => {
     const navigation = useNavigation();
     const {height} = useWindowDimensions();
 
-    const onSignInPressed = () => {
-        //     try {
-        //       const response = await axios.post('http://192.168.5.126/apiConnexion.php', {
-        //         username: username,
-        //         password: password
-        //       });
-              
-        //       if (response.status === 200) {
-        //         setToken(response.data.token);
-        //         // Redirect to home or profile page
-        //       } else {
-        //         // Credentials are incorrect, show error message
-        //       }
-        //     } catch (error) {
-        //       console.log(error);
-        //     }
-        // };
-
-
-
+    const onSignInPressed = async () => {
+         // Appeler l'API d'authentification pour vérifier les identifiants et obtenir le token JWT
+    // try {
+    //     const response = await fetch('http://192.168.5.126/apiConnexion.php'), {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({
+    //         username: username,
+    //         password: password,
+    //       }),
+    //     });
+  
+    //     if (response.ok) {
+    //       const data = await response.json();
+    //       const token = data.token; // Récupérer le token JWT depuis la réponse de l'API
+  
+    //       // Stocker le token JWT dans AsyncStorage (ou dans le système de stockage de votre choix)
+    //       await AsyncStorage.setItem('token', token);
+  
+    //       // Naviguer vers la page d'accueil
+    //       navigation.navigate('Contrôle parking');
+    //     } else {
+    //       // Gérer les erreurs d'authentification
+    //       console.error('Erreur d\'authentification');
+    //     }
+    //   } catch (error) {
+    //     console.error('Erreur de connexion', error);
+    //   }
+    // };
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // try {
         //     const response = await fetch('http://192.168.5.126/apiConnexion.php', {
@@ -87,7 +99,7 @@ const SignInScreen = () => {
     const onForgotPasswordPressed = () => {
         //console.warn('onForgotPasswordPressed')
 
-        Alert.alert("Veuillez contacter l'admin pour demander le mot de passe")
+        Alert.alert("Veuillez contacter l'admin pour l'oubli de votre mot de passe")
 
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -126,6 +138,7 @@ const SignInScreen = () => {
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
 root:{

@@ -13,7 +13,7 @@ const Navigation = () => {
         <Stack.Navigator>
         <Stack.Screen name = "Authentification" component={SignInScreen} screenOptions={{headerShown:true}}/>
 
-        <Stack.Screen name = "Contrôle parking" component={Home} screenOptions={{headerShown:false}}/>
+        <Stack.Screen name = "Contrôle parking" component={Home} screenOptions={{headerShown:true}}/>
 
         </Stack.Navigator>
    </NavigationContainer>

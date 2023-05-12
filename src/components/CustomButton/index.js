@@ -1,1 +1,1 @@
-export { defeult} from '../CustomInput/CustomButton';
+export { default} from '../CustomInput/CustomButton';
